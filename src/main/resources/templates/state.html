@@ -501,8 +501,7 @@
 
           <div class="modal-body">
             <label for="ddlCountryAdd" class="col-form-label">Country: </label>
-            <select class="form-control" id="ddlCountryAdd" name="countryid">
-              <option>-SELECT-</option>
+            <select class="form-control" id="ddlCountryAdd" name="countryid" required>
               <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.description}">
               </option>
             </select>
@@ -553,8 +552,7 @@
             </div>
 
             <label for="ddlCountryEdit" class="col-form-label">Country:</label>
-            <select class="form-control" id="ddlCountryEdit" name="countryid">
-              <option>-SELECT-</option>
+            <select class="form-control" id="ddlCountryEdit" name="countryid" required>
               <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.description}">
               </option>
             </select>
@@ -623,7 +621,6 @@
 
             <label for="ddlCountryDetails" class="col-form-label">Country:</label>
             <select class="form-control" id="ddlCountryDetails" name="countryid">
-              <option disabled>-SELECT-</option>
               <option th:each="country : ${countries}" th:value="${country.id}" th:text="${country.description}"
                 disabled>
               </option>
