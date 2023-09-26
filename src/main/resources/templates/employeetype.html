@@ -9,7 +9,7 @@
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Vehicle Types Management Page</title>
+  <title>Employee Types Management Page</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -422,7 +422,7 @@
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa-table"></i>List of Vehicle Types</h3>
+            <h3 class="page-header"><i class="fa fa-table"></i>List of Employee types</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
               <li><i class="fa fa-table"></i>Table</li>
@@ -450,18 +450,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr th:each="vehicletype:${vehicletypes}">
-                      <td th:text="${vehicletype.id}"></td>
-                      <td th:text="${vehicletype.description}"></td>
-                      <td th:text="${vehicletype.details}"></td>
+                    <tr th:each="employeetype:${employeetypes}">
+                      <td th:text="${employeetype.id}"></td>
+                      <td th:text="${employeetype.description}"></td>
+                      <td th:text="${employeetype.details}"></td>
                       <td>
-                        <a th:href="@{/vehicleTypes/findById/{id}(id=${vehicletype.id})}"
-                          class="btn btn-primary editButton"><i class="icon_pencil-edit"></i></a>
+                        <a th:href="@{/employeeTypes/findById/{id}(id=${employeetype.id})}" class="btn btn-primary editButton"><i
+                            class="icon_pencil-edit"></i></a>
                         <a class="btn btn-success detailsButton"
-                          th:href="@{/vehicleTypes/findById/{id}(id=${vehicletype.id})}"><i
-                            class="icon_document_alt"></i></a>
-                        <a class="btn btn-danger deleteButton"
-                          th:href="@{/vehicleTypes/delete/{id}(id=${vehicletype.id})}"><i
+                          th:href="@{/employeeTypes/findById/{id}(id=${employeetype.id})}"><i class="icon_document_alt"></i></a>
+                        <a class="btn btn-danger deleteButton" th:href="@{/employeeTypes/delete/{id}(id=${employeetype.id})}"><i
                             class="icon_close_alt2"></i></a>
                       </td>
                     </tr>
@@ -491,7 +489,7 @@
 
   <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <form th:action="@{/vehicleTypes/addNew}" method="post">
+    <form th:action="@{/employeeTypes/addNew}" method="post">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -522,7 +520,7 @@
 
   <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <form th:action="@{/vehicleTypes/update}" method="put">
+    <form th:action="@{/employeeTypes/update}" method="put">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -573,11 +571,11 @@
 
   <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
-    <form th:action="@{/vehicleTypes/update}" method="put">
+    <form th:action="@{/employeeTypes/update}" method="put">
       <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="detailsModalLabel">Details Data</h5>
+            <h5 class="modal-title" id="detailsModalLabel">Edit Data</h5>
           </div>
           <div class="modal-body">
 
@@ -592,7 +590,7 @@
             </div>
 
             <div class="form-group">
-              <label for="detailsDetails" class="col-form-label">Details:</label>
+              <label for="detailsDetails" class="col-form-label">Capital:</label>
               <input type="text" class="form-control" id="detailsDetails" readonly>
             </div>
 
@@ -623,7 +621,7 @@
   <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
   <!--custome script for all page-->
   <script src="js/scripts.js"></script>
-  <script src="js/vehicletype.js"></script>
+  <script src="js/employeetype.js"></script>
 
 
 </body>
