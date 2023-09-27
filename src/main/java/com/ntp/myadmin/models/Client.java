@@ -34,7 +34,7 @@ public class Client {
 	private String email;
 
     @ManyToOne
-    @JoinColumn(name="contryid", insertable = false, updatable = false)
+    @JoinColumn(name="countryid", insertable = false, updatable = false)
     private Country country;
 	private Integer countryid;
 
